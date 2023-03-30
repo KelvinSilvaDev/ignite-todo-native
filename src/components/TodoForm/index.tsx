@@ -23,8 +23,9 @@ export function TodoForm({ addTodo }: any) {
       text: newTodoText,
       completed: false,
     };
-    addTodo(newTodo);
     Keyboard.dismiss;
+    addTodo(newTodo);
+    setNewTodoText("");
   }
   return (
     <View style={styles.container}>
@@ -36,8 +37,12 @@ export function TodoForm({ addTodo }: any) {
         onChangeText={(text) => handleNewTodo(text)}
       />
 
-      <TouchableWithoutFeedback onPress={Keyboard.dismiss} accessible={false}>
-        <TouchableOpacity style={styles.button} onPress={handleSubmit}>
+      <TouchableWithoutFeedback accessible={false}>
+        <TouchableOpacity
+          style={styles.button}
+          onPress={handleSubmit}
+          onPressOut={Keyboard.dismiss}
+        >
           <PlusCircle color="#fff" />
         </TouchableOpacity>
       </TouchableWithoutFeedback>

@@ -8,7 +8,7 @@ import { styles } from "./styles";
 import { TodoCounter } from "../../components/TodoCounter";
 import { EmptyComponent } from "../../components/EmptyComponent";
 
-interface Todo {
+export interface Todo {
   id: number;
   text: string;
   completed: boolean;
@@ -25,7 +25,6 @@ export function Home() {
 
   function removeTodo(todo: Todo) {
     setTodos(todos.filter((t) => t.id !== todo.id));
-    console.log(todos);
   }
 
   function completeTodo(todo: Todo) {
@@ -34,7 +33,6 @@ export function Home() {
         t.id === todo.id ? { ...t, completed: !t.completed } : t
       )
     );
-    console.log(todos);
   }
 
   return (
