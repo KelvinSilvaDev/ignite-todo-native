@@ -21,7 +21,7 @@ export const styles = StyleSheet.create({
     paddingVertical: 10,
     gap: 5,
   },
-  text: {
+  TodoText: {
     marginLeft: 5,
     fontSize: 16,
     color: "#fff",

@@ -15,8 +15,6 @@ export function TodoItem({ todo, removeTodo, completeTodo }: any) {
     completeTodo(todo);
   }
 
-  console.log(todo.completed);
-
   return (
     <View style={styles.container}>
       <TouchableOpacity style={styles.wrapp} onPress={handleDoneTodo}>
@@ -28,7 +26,7 @@ export function TodoItem({ todo, removeTodo, completeTodo }: any) {
         ) : (
           <>
             <Image source={UncheckIcon} />
-            <Text style={styles.text}>{todo.text}</Text>
+            <Text style={styles.TodoText}>{todo.text}</Text>
           </>
         )}
       </TouchableOpacity>

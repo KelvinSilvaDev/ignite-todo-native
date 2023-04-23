@@ -6,6 +6,7 @@ import {
   Text,
   Keyboard,
   TouchableWithoutFeedback,
+  Alert,
 } from "react-native";
 import { PlusCircle } from "phosphor-react-native";
 import { styles } from "./styles";
@@ -24,6 +25,10 @@ export function TodoForm({ addTodo }: any) {
       completed: false,
     };
     Keyboard.dismiss;
+    if (newTodo.text.length <= 0) {
+      Alert.alert("O conteúdo do ToDo está vazio");
+      return null;
+    }
     addTodo(newTodo);
     setNewTodoText("");
   }
